@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Make header stick to the top */
+    top: 0;
+    z-index: 100; /* Ensure header stays on top */
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e44d26;
+}
+
+.section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start; /* Enable scroll snapping */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Home Section */
+#home {
+    background: linear-gradient(to bottom, #f8f8f8, #eee);
+}
+
+#home .content {
+    max-width: 800px;
+}
+
+#home h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#home p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    animation: slideInUp 1s ease-in-out;
+}
+
+#home button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #e44d26;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulse 2s infinite alternate;
+}
+
+#home button:hover {
+    background-color: #c63e1f;
+}
+
+
+/* Rose Sections */
+.rose-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Vertically center content */
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+.rose-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e44d26;
+}
+
+.rose-section blockquote {
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.rose-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.rose-image {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden; /* Clip any overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1s ease-in-out;
+
+}
+
+.rose-image img {
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    display: block; /* Remove any extra space below the image */
+    transition: transform 0.5s ease; /* Smooth zoom on hover */
+}
+
+.rose-image:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Scroll Snap */
+html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 30px;
+    }
+
+    #home h2 {
+        font-size: 2.5em;
+    }
+
+    .rose-section {
+        flex-direction: column;
+    }
+
+    .rose-image img {
+        width: 100%; /* Make image responsive */
+        max-width: 300px; /* Limit maximum width */
+    }
+
+    .rose-details {
+        margin-top: 30px;
+    }
+}
